@@ -6,7 +6,7 @@ from struct import unpack
 
 class Movie:
 	def __init__(self, filename):
-		with open(filename, 'r') as f:
+		with open(filename, 'rb') as f:
 			header = f.read(64)
 			if not header.startswith('Gens Movie TEST'):
 				raise Exception("The file is not a valid Gens movie file")
